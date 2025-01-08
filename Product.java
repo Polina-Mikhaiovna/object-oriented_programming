@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.Objects;
 
-public class Product {
+public abstract class Product {
     private String name; // поле класса, область видимости весь класс
     private double prise;
     private int count;
