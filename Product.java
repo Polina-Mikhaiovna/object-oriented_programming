@@ -6,6 +6,13 @@ public abstract class Product {
     private double prise;
     private int count;
 
+    // конструктор. Он тоже является методом
+    public Product(String name, double prise, int count) {
+        this.name = name;
+        this.count = count;
+        this.prise = prise;
+    }
+
     public String getName() {
         return name;
     }
@@ -30,12 +37,9 @@ public abstract class Product {
         this.count = count;
     }
 
-    // конструктор. Он тоже является методом
-    public Product(String name, double prise, int count) {
-        this.name = name;
-        this.count = count;
-        this.prise = prise;
-    }
+    public abstract String getDescription();
+
+
 
     @Override
     public String toString() {

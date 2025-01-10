@@ -21,4 +21,13 @@ public class WatersVendingMachine implements VendingMachine{
         }
         return null;
     }
+
+    public Water getProduct(String name, double volume){
+        for (Product product : products) {
+            if(Objects.equals(product.getName(), name)){
+                return (Water) product;
+            }
+        }
+        return null;
+    }
 }
