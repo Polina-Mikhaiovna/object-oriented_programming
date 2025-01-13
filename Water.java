@@ -16,7 +16,7 @@ public class Water extends Product{
 
     @Override
     public String getDescription() {
-        return "Water: " + getName() + ", count: " + getCount();
+        return "Water/" + getName() + ": count - " + getCount();
     }
 
     @Override
