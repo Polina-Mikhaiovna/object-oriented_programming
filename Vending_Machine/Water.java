@@ -1,3 +1,5 @@
+package Vending_Machine;
+
 public class Water extends Product{
     private double volume;
 

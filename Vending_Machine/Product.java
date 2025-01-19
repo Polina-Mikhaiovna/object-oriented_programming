@@ -1,3 +1,5 @@
+package Vending_Machine;
+
 import java.util.*;
 import java.util.Objects;
 
@@ -39,18 +41,14 @@ public abstract class Product {
 
     public abstract String getDescription();
 
-
-
     @Override
     public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' + ", prise='" + prise +  "', count='" + count + '\'' +'}';
+        return "Product{" + "name='" + name + '\'' + ", prise='" + prise +  "', count='" + count + '\'' +'}';
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name);
     }
-
 
 }

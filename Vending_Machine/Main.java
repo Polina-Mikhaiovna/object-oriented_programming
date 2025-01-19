@@ -1,3 +1,5 @@
+package Vending_Machine;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,22 +17,5 @@ public class Main {
 
         HotDrinksVendingMachine HDVM = new HotDrinksVendingMachine(products);
         System.out.println(HDVM.getProduct("Americano", 75));
-
-
-
-        // Вывод информации о каждом продукте
-//        for (Product product : products) {
-//            System.out.println(product.getDescription());
-//        }
-
-//        VendingMachine vM = new VendingMachine(3, 0);
-//        List<Product> productsList= vM.initProducts();
-//
-//        for (String namesOfProd : productsList.){
-//            System.out.println(namesOfProd);
-//
-//        }
-//
-//        System.out.println(vM.getProduct("Water", products));
     }
 }

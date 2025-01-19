@@ -1,4 +1,4 @@
-//� Создать наследника класса Продукта - ГорячийНапиток с дополнительным полем int температура.
+package Vending_Machine;//� Создать наследника класса Продукта - ГорячийНапиток с дополнительным полем int температура.
 //� Создать класс ГорячихНапитковАвтомат реализующий интерфейс ТорговыйАвтомат и реализовать
 //перегруженный метод getProduct(int name, int volume, int temperature) выдающий продукт
 //        соответствующий имени, объему и температуре
@@ -24,8 +24,6 @@ public class HotDrinks extends Product{
     public double getTemperature() {
         return temperature;
     }
-
-
 
     @Override
     public String getDescription() {
