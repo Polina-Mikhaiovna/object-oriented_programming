@@ -1,28 +1,22 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Person {
-    public int id;
+public class Person implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
+
     public String name;
-    public List<Person> children;
     public String dateOfBirth;
     public Person mother;
     public Person father;
+    public List<Person> children;
 
-    public Person(int id, String name, String dateOfBirth) {
-        this.id = id;
+    public Person(String name, String dateOfBirth) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.children = new ArrayList<>();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -42,11 +36,19 @@ public class Person {
     }
 
     public void addChild(Person child) {
-        this.children.add(child);
+        children.add(child);
     }
 
     public List<Person> getChildren() {
         return children;
+    }
+
+    public Person getMother(Person name){
+        return this.mother;
+    }
+
+    public Person getFather(Person name){
+        return this.father;
     }
 
     public void setMother(Person mother) {
@@ -60,24 +62,28 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", mother=" + mother +
-                ", father=" + father +
-                '}';
+        return String.format("%s %s", name, dateOfBirth);
     }
+
+    // @Override
+    // public String toString() {
+    //     return "\nPerson{" +
+    //             ", name='" + name + '\'' +
+    //             ", dateOfBirth='" + dateOfBirth + '\'' +
+    //             ", mother=" + mother +
+    //             ", father=" + father +
+    //             '}';
+    // }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return id == person.id && Objects.equals(name, person.name) && Objects.equals(dateOfBirth, person.dateOfBirth) && Objects.equals(children, person.children) && Objects.equals(mother, person.mother) && Objects.equals(father, person.father);
+        return Objects.equals(name, person.name) && Objects.equals(dateOfBirth, person.dateOfBirth) && Objects.equals(children, person.children) && Objects.equals(mother, person.mother) && Objects.equals(father, person.father);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, dateOfBirth, children, mother, father);
+        return Objects.hash(name, dateOfBirth, children, mother, father);
     }
 }
